@@ -1,19 +1,19 @@
 # Tool Learning Log
 
-## Tool: **X**
+## Tool: **Phaser**
 
-## Project: **X**
+## Project: **Space Shooting**
 
 ---
 
-### X/X/XX:
-* Text
+### 12/2/24: LL3
+*
 
-### X/X/XX:
-* Text
+### 12/16/24: LL6
+* Today in learning how to do my freedom project 
 
 
-<!-- 
+<!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
 * Challenges, a-ha moments, etc
