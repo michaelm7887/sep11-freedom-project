@@ -1,7 +1,7 @@
 # Entry 3
 ##### 02/03/35
 
-Thoughout the blog entrys that I have missed, I have been learning my tool using a playlist form a youtuber(https://www.youtube.com/@swestover)using his playlist as a refrence and a guide into helping me understanding my tool and how I can use it with my project.(https://www.youtube.com/watch?v=iqMIGGy5YiE&list=PLmcXe0-sfoShHpVWLDW2gqsyH1UFRni_2)I didn't really have a winter break goal, but what I have been doing over the winter break was to continue my learning and expanding my Freedom project work using jsbin and doing code alongs with the videos in the playlist. Watching throughout the videos giving me phaser code examples that would help me for the FP, throughtout the days I have learnt codes, an example would be:
+Thoughout the blog entrys that I have missed, I have been learning my tool using a playlist form a youtuber(https://www.youtube.com/@swestover) using his playlist as a refrence and a guide into helping me understanding my tool and how I can use it with my project.(https://www.youtube.com/watch?v=iqMIGGy5YiE&list=PLmcXe0-sfoShHpVWLDW2gqsyH1UFRni_2) I didn't really have a winter break goal, but what I have been doing over the winter break was to continue my learning and expanding my Freedom project work using jsbin and doing code alongs with the videos in the playlist. Watching throughout the videos giving me phaser code examples that would help me for the FP, throughtout the days I have learnt codes, an example would be:
 ```js
 this.#cursorKeys.up.isUp
 ```
