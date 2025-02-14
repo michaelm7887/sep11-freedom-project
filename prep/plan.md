@@ -1,16 +1,24 @@
 # Plan
 
-## Tool: 
-## Product: 
+## Tool: Phaser
+## Product: SpaceShip shooting Game
 
 ---
 
 ## Timeline
 
 #### MVP
+- [ ] Task - Finding all needed sprites
+  - [ ] Make or use a background of space for my game (deadline: 2/27)
+  - [ ] Make or use spaceship/enemy models(deadline: 3/3)
+  - [ ] Uses bullet image 'space for shooting'(deadline: 3/7)
+- [ ] Task - Keys to move
+  - [ ] wasd or arrow keys(deadline:3/12)
+- [ ] Task - sound effect
+  - [ ] Shooting noises(deadline: 3/20)
+  - [ ] Music(deadline: 3/26)
 
-- [ ] Task (deadline: X)
-  - [ ] Subtask (deadline: X)
+
 
 #### Beyond MVP
 
