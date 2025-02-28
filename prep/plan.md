@@ -9,7 +9,7 @@
 
 #### MVP
 - [ ] Task - Finding all needed sprites
-  - [ ] Make or use a background of space for my game (deadline: 2/27)
+  - [ ] Make or use a background of space for my game (deadline: 2/28)
   - [ ] Make or use spaceship/enemy models(deadline: 3/3)
   - [ ] Uses bullet image 'space for shooting'(deadline: 3/7)
 - [ ] Task - Keys to move
