@@ -6,11 +6,10 @@
 
 ---
 
-### 12/2/24: LL3
-*
+### 3/24/25
+In todays day of working on my MVP, I have been using a guide into making my background and I successfully made it 
 
-### 12/16/24: LL6
-* Today in learning how to do my freedom project 
+
 
 
 <!--
