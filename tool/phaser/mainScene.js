@@ -4,23 +4,18 @@ export default class MainScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('space', 'https://labs.phaser.io/assets/skies/deep-space.jpg');//space
-    this.load.image('player', 'https://labs.phaser.io/assets/sprites/player.png');//ship
-    this.load.image('bullet', 'https://labs.phaser.io/assets/sprites/bullet.png');//bullet
-    this.load.image('enemy', 'https://labs.phaser.io/assets/sprites/ufo.png');//enemy
-    this.load.image('bullet2', 'https://labs.phaser.io/assets/sprites/bullet.png'); // Shotgun bullet
+    this.load.image('space', 'https://labs.phaser.io/assets/skies/deep-space.jpg');
+    this.load.image('player', 'https://labs.phaser.io/assets/sprites/player.png');
+    this.load.image('bullet', 'https://labs.phaser.io/assets/sprites/bullet.png');
+    this.load.image('enemy', 'https://labs.phaser.io/assets/sprites/ufo.png');
+    this.load.image('bullet2', 'https://labs.phaser.io/assets/sprites/bullet.png');
   }
 
   create() {
-   this.add.image(400, 300, 'space').setDisplaySize(800, 600);
+    this.add.image(400, 300, 'space').setDisplaySize(800, 600);
     this.player = this.physics.add.image(400, 550, 'player').setScale(1.5).setCollideWorldBounds(true);
     this.playerHealth = 3;
-    this.healthText = this.add.text(16, 16, 'Health: 3', {
-      fontSize: '24px',
-      fill: '#fff'
-    });
-this.add.image(600, 400, 'space').setDisplaySize(1200, 800); // Update center and size
-this.player = this.physics.add.image(600, 750, 'player') // Centered near the bottom
+    this.healthText = this.add.text(16, 16, 'Health: 3', { fontSize: '24px', fill: '#fff' });
 
     this.bullets = this.physics.add.group({ classType: Phaser.Physics.Arcade.Image, runChildUpdate: true });
     this.secondaryBullets = this.physics.add.group({ classType: Phaser.Physics.Arcade.Image, runChildUpdate: true });
@@ -37,8 +32,6 @@ this.player = this.physics.add.image(600, 750, 'player') // Centered near the bo
     this.lastFired = 0;
 
     this.input.keyboard.on('keydown-ONE', this.toggleShotgunMode, this);
-    this.gameOverText = null;
-    this.restartText = null;
 
     this.time.addEvent({
       delay: 250,
@@ -57,12 +50,12 @@ this.player = this.physics.add.image(600, 750, 'player') // Centered near the bo
       this.player.setVelocityX(0);
     }
 
-    if (this.spacebar.isDown && time > this.lastFired && !this.isShotgunMode) {
-      this.fireBullet();
-    }
-
-    if (this.spacebar.isDown && time > this.lastFired && this.isShotgunMode) {
-      this.fireShotgun();
+    if (this.spacebar.isDown && time > this.lastFired) {
+      if (this.isShotgunMode) {
+        this.fireShotgun();
+      } else {
+        this.fireBullet();
+      }
     }
 
     this.bullets.children.each(bullet => {
@@ -126,24 +119,16 @@ this.player = this.physics.add.image(600, 750, 'player') // Centered near the bo
       this.physics.pause();
       player.setTint(0xff0000);
 
-      if (!this.gameOverText) {
-        this.gameOverText = this.add.text(400, 300, 'GAME OVER', {
-          fontSize: '64px',
-          fill: '#ff0000',
-          fontStyle: 'bold'
-        }).setOrigin(0.5);
-      } else {
-        this.gameOverText.setVisible(true);
-      }
+      this.gameOverText = this.add.text(400, 300, 'GAME OVER', {
+        fontSize: '64px',
+        fill: '#ff0000',
+        fontStyle: 'bold'
+      }).setOrigin(0.5);
 
-      if (!this.restartText) {
-        this.restartText = this.add.text(400, 370, 'Refresh Page to Restart', {
-          fontSize: '32px',
-          fill: '#ffffff'
-        }).setOrigin(0.5);
-      } else {
-        this.restartText.setVisible(true);
-      }
+      this.restartText = this.add.text(400, 370, 'Refresh Page to Restart', {
+        fontSize: '32px',
+        fill: '#ffffff'
+      }).setOrigin(0.5);
     }
   }
 }
