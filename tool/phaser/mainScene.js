@@ -15,7 +15,10 @@ export default class MainScene extends Phaser.Scene {
     this.add.image(400, 300, 'space').setDisplaySize(800, 600);
     this.player = this.physics.add.image(400, 550, 'player').setScale(1.5).setCollideWorldBounds(true);
     this.playerHealth = 3;
+    this.score = 0;
+
     this.healthText = this.add.text(16, 16, 'Health: 3', { fontSize: '24px', fill: '#fff' });
+    this.scoreText = this.add.text(600, 16, 'Score: 0', { fontSize: '24px', fill: '#fff' });
 
     this.bullets = this.physics.add.group({ classType: Phaser.Physics.Arcade.Image, runChildUpdate: true });
     this.secondaryBullets = this.physics.add.group({ classType: Phaser.Physics.Arcade.Image, runChildUpdate: true });
@@ -92,8 +95,8 @@ export default class MainScene extends Phaser.Scene {
       if (bullet) {
         bullet.setActive(true);
         bullet.setVisible(true);
-        bullet.body.velocity.x = Math.cos(angle) * 300;
-        bullet.body.velocity.y = Math.sin(angle) * 300;
+        bullet.body.velocity.x = Math.cos(angle) * 250;
+        bullet.body.velocity.y = Math.sin(angle) * 250;
       }
     }
     this.lastFired = this.time.now + 500;
@@ -108,6 +111,25 @@ export default class MainScene extends Phaser.Scene {
   handleBulletHit(bullet, enemy) {
     bullet.destroy();
     enemy.destroy();
+
+    this.score += 5;
+    this.scoreText.setText('Score: ' + this.score);
+
+    if (this.score >= 200) {
+      this.physics.pause();
+      this.player.setTint(0x00ff00);
+
+      this.winText = this.add.text(400, 300, 'YOU WIN!', {
+        fontSize: '64px',
+        fill: '#00ff00',
+        fontStyle: 'bold'
+      }).setOrigin(0.5);
+
+      this.restartText = this.add.text(400, 370, 'Refresh Page to Restart', {
+        fontSize: '32px',
+        fill: '#ffffff'
+      }).setOrigin(0.5);
+    }
   }
 
   handlePlayerHit(player, enemy) {
